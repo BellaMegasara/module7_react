@@ -1,18 +1,39 @@
 import "./App.css";
 import { useState } from "react";
-import { SlideWork } from "./containers/slidework";
+import { SlideWork } from "./containers/slideWork";
 import { LabOne } from "./components/LabOne";
+import { LabTwo } from "./components/LabTwo";
+import { CustomHookExamples } from "./containers/CustomHookExamples";
+import { ContextWork } from "./containers/ContextWork";
+import { UserProvider } from "./context/UserContent";
 
-// COMPONENT FUNCTION NAME -> INITIALISE
+// COMPONENT FUNCTION NAME
+const UserContext = React.createContext();
+// Custom provider component for this context.
+// Use it in App.jsx like <UserProvider>...</UserProvider> 
 const App = () => {
-  const [contentName, setContentName] = useState("");
+  const [contentName, setContentName] = useState("Lab 1");
 
-  const contentConfig = [{ lab: "Lab 1" }];
+  const contentConfig = [
+    { lab: "Lab 1" },
+    { lab: "Lab 2" },
+    { lab: "slide work"},
+    { lab: "custom hooks"},
+    { lab: "Context work"}
+  ];
 
   const displayHandler = () => {
     switch (contentName) {
       case contentConfig[0].lab:
-        return <LabOne/>;
+        return <LabOne />;
+      case contentConfig[0].lab:
+          return <LabTwo />; 
+      case contentConfig[1].lab:
+        return <SlideWork />;
+      case contentConfig[2].lab:
+        return <CustomHookExamples />;
+      case contentConfig[3].lab:
+        return <ContextWork />;
       default:
         return (
           <div
@@ -41,6 +62,8 @@ const App = () => {
 
   //RETURN
   return (
+    <UserProvider>
+
     <div>
       <p>Module Seven Starts Here</p>
 
@@ -67,6 +90,7 @@ const App = () => {
         {displayHandler()}
       </div>
     </div>
+    </UserProvider>
   );
 };
 
