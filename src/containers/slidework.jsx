@@ -1,6 +1,4 @@
 import React from "react";
-import { useEffect } from "react";
-import { useReducer } from "react"; 
 import { useEffect, useReducer } from "react"
 import axios from 'axios' // first do 'npm install axios' - alternative to fetch
 
@@ -70,7 +68,4 @@ const PostListReducer = () => {
     dispatch({ type: "FETCH_SUCCESS", payload: response.data }) // dispatch calls reducer function and triggers re-render
 })
 .catch(error => {
-}) }, []);
-}
-
-};
+}), []);

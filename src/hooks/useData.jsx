@@ -1,6 +1,6 @@
 
-import React, { useReducer } from "react";
-import { useState, useEffect} from React
+import React, { useReducer, useEffect } from "react";
+//import { useState, useEffect} from React
 
 export function useData(url) {
 
@@ -13,8 +13,8 @@ export function useData(url) {
     useEffect(()=> {
         if (url) {
             let ignore = false;
-            dispatch( type: getDataReducerActions.FETCH);
-
+            dispatch({ type: getDataReducerActions.FETCH});
+UserContent
             fetch(url)
             .then((response) => response.json())
             .then((json) => {

@@ -10,12 +10,12 @@ export const LabTwo = () => {
         const [rate, setRate] = useState(0);
         const [data, isLoading] = useData(`https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=${currency}`);
 
-        useEffect(()=> {
-            if (data && 
+        //useEffect(()=> {
+        //    if (data && 
     
 
         const options = currencies.map((curr) => (
-            options value={curr} key={curr}
+            <options value={curr} key={curr}>
             {curr}
             </options>
         ));

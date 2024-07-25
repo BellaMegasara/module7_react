@@ -1,16 +1,20 @@
 import React from "react"
-import { useUserContext } from "../context/UserContent";
-import { UserProvider } from "../context/UserContent";
+import { useUserContext } from "../context/UserContext";
 
 
 
 export const ContextWork = () => {
   //state var
-const { currentUser, handleUpdateUser } = useUserContext();
+const { currentUser, handleUpdateUser, mode, toggleMode } = useUserContext();
 
 //useEffect
 
 //func
+const handleNameChange = (e) => {
+  //---------------------------
+  handleUpdateUser({ name: e.target.value });
+  //------------------------------
+};
 
 //return
 
@@ -27,13 +31,12 @@ return (
       >
 
         <p>first context example</p>
-        ...
-        {currentUser.name}
-        <button onClick={() => handleUpdateUser({ name: "Arnie" })}>
-          Update user
-          </button>
+
+     
+  
+      <input value={currentUser.name} onChange={handleNameChange} />
+      <button onClick={toggleMode}>{mode} mode</button>
 </div>
 </div>
 );
 };
-
