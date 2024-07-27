@@ -9,7 +9,8 @@ export const Navbar = () => {
         { to: "/lab-one", label: "Lab One" },
         { to: "/lab-two", label: "Lab Two" }, 
         { to: "/slide-work", label: "Slide Work" },
-        { to: "/context-worl", lable: "Context Work"},
+        { to: "/custom-hook-examples", label: "Custom Hook" },
+        { to: "/context-work", lable: "Context Work"},
 
     ];
 
