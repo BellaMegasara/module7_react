@@ -1,25 +1,39 @@
-import React from "react"
+import React, { useState } from "react"
 import { useUserContext } from "../context/UserContext";
+import { GlobalState } from "../components/GlobalState";
 
 
 
 export const ContextWork = () => {
   //state var
-const { currentUser, handleUpdateUser, mode, toggleMode } = useUserContext();
+  const { currentUser, handleUpdateUser, mode, toggleMode } = useUserContext();
+  const [name, setName] = useState(currentUser.name);
+  const [email, setEmail] = useState(currentUser.email);
+
+  
 
 //useEffect
 
 //func
 const handleNameChange = (e) => {
   //---------------------------
-  handleUpdateUser({ name: e.target.value });
+  setName(e.target.value );
   //------------------------------
+};
+
+const handleEmailChange = (e) => {
+  //---------------------------
+  setEmail(e.target.value );
+};
+
+const handleSubmitUser = () => {
+  handleUpdateUser({ name: name, email: email });
 };
 
 //return
 
 return (
-<div style={{ width: "100%" }}>
+div style={{ width: "100%" }}
 <div style={{
   border:"solid blue 1px",
   padding: "10px",
@@ -34,8 +48,11 @@ return (
 
      
   
-      <input value={currentUser.name} onChange={handleNameChange} />
+      <input value={name} onChange={handleNameChange} />
+      <input value={email} type="email" onChange={handleEmailChange} />
+      <button onClick={handleSubmitUser}>Submit</button>
       <button onClick={toggleMode}>{mode} mode</button>
+
 </div>
 </div>
 );

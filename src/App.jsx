@@ -9,6 +9,9 @@ import { SlideWork } from "./containers/Slidework";
 import { CustomHookExamples } from "./containers/CustomHookExamples";
 import { ContextWork } from "./containers/ContextWork";
 import { Navbar } from "./components/Navbar";
+import { Square } from "./components/Square";
+import ProtectedRoute from "./components/ProtectedRoute";
+
 
 const App = () => {
 
@@ -16,11 +19,18 @@ const App = () => {
   //RETURN
   return (
     <UserProvider>
+    <Navbar />
     <Routes>
     <Route index element={<WelcomePage />} />
-    <Route path="test" element={<div>something</div>} />
-    
-    <Route path="lab-one" element={<LabOne />} />
+
+    <Route path="lab-one" element={
+  
+    <ProtectedRoute>
+     <LabOne />
+    </ProtectedRoute>
+    }
+    />
+
     <Route path="lab-two" element={<LabTwo />} />
 
     <Route path="slide-work" 
@@ -29,6 +39,7 @@ const App = () => {
 
     <Route path="custom-hooks" element={<CustomHookExamples />} />
     <Route path="context-work" element={<ContextWork />} />
+    <Route path="square" element={<Square />}
 
     <Route path="*" element={<div>Hey this path</div>} />
     </Routes>

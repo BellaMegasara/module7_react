@@ -20,8 +20,9 @@ const userReducer = (state, action) => {
 };
 
 const initialState = {
-    currentUser: { name: "Guest" },
+    currentUser: { name: "Guest", email: '' },
     mode: "light",
+    emoji: ":)",
 };
 
 //----------------------------------------

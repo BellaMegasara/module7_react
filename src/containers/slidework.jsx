@@ -30,6 +30,7 @@ export const PostListReducer = () => {
     dispatch({ type: "FETCH_SUCCESS", payload: response.data }) // dispatch calls reducer function and triggers re-render
 })
 .catch(error => {
-}) [])
-}
+}); []
+);
+};
 };
