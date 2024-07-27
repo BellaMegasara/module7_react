@@ -1,3 +1,4 @@
+import React from "react";
 import SubscribeForm from "../components/SubscribeForm";
 
 
@@ -27,7 +28,7 @@ export const CustomHookExamples = () => {
     ); 
 };
 
-const ExampleDecorator = ({ children }) => {
+export const ExampleDecorator = ({ children }) => {
     return (
         <div
         className="exampleDecorator"

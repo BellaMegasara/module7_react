@@ -8,7 +8,7 @@ import { LabTwo } from "./components/LabTwo";
 import { SlideWork } from "./containers/Slidework";
 import { CustomHookExamples } from "./containers/CustomHookExamples";
 import { ContextWork } from "./containers/ContextWork";
-
+import { Navbar } from "./components/Navbar";
 
 const App = () => {
 
@@ -18,9 +18,15 @@ const App = () => {
     <UserProvider>
     <Routes>
     <Route index element={<WelcomePage />} />
+    <Route path="test" element={<div>something</div>} />
+    
     <Route path="lab-one" element={<LabOne />} />
     <Route path="lab-two" element={<LabTwo />} />
-    <Route path="slide-work" element={<SlideWork />} />
+
+    <Route path="slide-work" 
+    <Route index element={<SlideWork />} />
+    <Route path="name-ref/:name" element={<NameComponentForRefExample />} />
+
     <Route path="custom-hooks" element={<CustomHookExamples />} />
     <Route path="context-work" element={<ContextWork />} />
 
