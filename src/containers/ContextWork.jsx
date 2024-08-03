@@ -1,6 +1,5 @@
 import React, { useState } from "react"
 import { useUserContext } from "../context/UserContext";
-import { GlobalState } from "../components/GlobalState";
 
 
 
@@ -12,39 +11,39 @@ export const ContextWork = () => {
 
   
 
-//useEffect
+  //useEffect
 
-//func
-const handleNameChange = (e) => {
-  //---------------------------
-  setName(e.target.value );
-  //------------------------------
-};
+  //func
+  const handleNameChange = (e) => {
+    //---------------------------
+    setName(e.target.value);
+    //------------------------------
+  };
 
-const handleEmailChange = (e) => {
-  //---------------------------
-  setEmail(e.target.value );
-};
+  const handleEmailChange = (e) => {
+    //---------------------------
+    setEmail(e.target.value);
+  };
 
-const handleSubmitUser = () => {
-  handleUpdateUser({ name: name, email: email });
-};
+  const handleSubmitUser = () => {
+    handleUpdateUser({ name: name, email: email });
+  };
 
-//return
+  //return
 
-return (
-div style={{ width: "100%" }}
-<div style={{
-  border:"solid blue 1px",
-  padding: "10px",
-  margin: "10px",
-  display: "flex",
-  flexDirection: "column",
-  backgroundColor: mode === "dark" ? "black" : "lightgrey",
-  color: mode === "dark" ? "white" : "black" }}
-      >
+  return (
+    <div style={{
+      border: "solid blue 1px",
+      padding: "10px",
+      margin: "10px",
+      display: "flex",
+      flexDirection: "column",
+      backgroundColor: mode === "dark" ? "black" : "lightgrey",
+      color: mode === "dark" ? "white" : "black"
+    }}
+    >
 
-        <p>first context example</p>
+      <p>first context example</p>
 
      
   
@@ -53,7 +52,6 @@ div style={{ width: "100%" }}
       <button onClick={handleSubmitUser}>Submit</button>
       <button onClick={toggleMode}>{mode} mode</button>
 
-</div>
-</div>
-);
+    </div>
+  )
 };

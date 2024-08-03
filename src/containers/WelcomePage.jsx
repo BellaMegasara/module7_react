@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import { SlideWork } from "./containers/Slidework";
-import { LabOne } from "./components/LabOne";
-import { LabTwo } from "./components/LabTwo";
-import { CustomHookExamples } from "./containers/CustomHookExamples";
-import { ContextWork } from "./containers/ContextWork";
+import { SlideWork } from "./SlideWork";
+import { LabOne } from "../components/LabOne";
+import { LabTwo } from "../components/LabTwo";
+import { CustomHookExamples } from "../containers/CustomHookExamples";
+import { ContextWork } from "../containers/ContextWork";
 
 
 export const WelcomePage = () => {
